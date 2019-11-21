@@ -1,16 +1,29 @@
-**Title**
+**Drinkspiration Server**
 ----
   <_Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple)._>
 
 * **URL**
 
-  <_The URL Structure (path only, no root url)_>
+  GitHub Repo: [Drinkspiration Client](https://github.com/W00DH0USE/Drinkspiration)
 
 * **Method:**
   
-  <_The request type_>
+  `/api/students`
+  - GET -> Gets all students that belong to specific user id (Requires Auth)
+  - POST -> Inserts new student into database (Requires Auth)
 
-  `GET` | `POST` | `DELETE` | `PUT`
+`/api/students/:studentId`
+  - DELETE -> Removes student from database (Requires Auth)
+  - PATCH -> Updates student in database (Requires Auth)
+
+`/api/auth/login`
+  - POST -> Compares to users in database, if matching creates and sends JWT token
+
+`/api/auth/refresh`
+  - POST -> Refreshes JWT token
+
+`/api/users`
+  - POST -> Adds user to database
   
 *  **URL Params**
 
@@ -51,6 +64,22 @@
 
   <_Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) - this makes life easier and more predictable._> 
 
-* **Notes:**
+* **Technologies Used:**
+- HTML
+- CSS
+- JavaScript
+- React
+- Jest
+- Express
+- Node.js
+- PostgreSQL
+- Knex
+- Mocha, Chai & Supertest
 
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
+- Zeit Now
+- Heroku
+- Git
+- Github
+- Visual Studio Code
+- DBeaver
+- Postman
