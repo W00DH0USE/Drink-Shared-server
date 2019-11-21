@@ -1,31 +1,56 @@
-# Blogful API Auth!
+**Title**
+----
+  <_Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple)._>
 
-## Scripts
+* **URL**
 
-Start the application `npm start`
+  <_The URL Structure (path only, no root url)_>
 
-Start nodemon for the application `npm run dev`
+* **Method:**
+  
+  <_The request type_>
 
-Run the tests in watch mode `npm test`
+  `GET` | `POST` | `DELETE` | `PUT`
+  
+*  **URL Params**
 
-Migrate the dev database `npm run migrate`
+   <_If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required. Document data constraints._> 
 
-Migrate the test database `npm run migrate:test`
+   **Required:**
+ 
+   `id=[integer]`
 
-## Configuring Postgres
+   **Optional:**
+ 
+   `photo_id=[alphanumeric]`
 
-For tests involving time to run properly, configure your Postgres database to run in the UTC timezone.
+* **Data Params**
 
-1. Locate the `postgresql.conf` file for your Postgres installation.
-   1. E.g. for an OS X, Homebrew install: `/usr/local/var/postgres/postgresql.conf`
-   2. E.g. on Windows, _maybe_: `C:\Program Files\PostgreSQL\11.2\data\postgresql.conf`
-2. Find the `timezone` line and set it to `UTC`:
+  <_If making a post request, what should the body payload look like? URL Params rules apply here too._>
 
-```conf
-# - Locale and Formatting -
+* **Success Response:**
+  
+  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
 
-datestyle = 'iso, mdy'
-#intervalstyle = 'postgres'
-timezone = 'UTC'
-#timezone_abbreviations = 'Default'     # Select the set of available time zone
-```
+  * **Code:** 200 <br />
+    **Content:** `{ id : 12 }`
+ 
+* **Error Response:**
+
+  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
+
+  * **Code:** 401 UNAUTHORIZED <br />
+    **Content:** `{ error : "Log in" }`
+
+  OR
+
+  * **Code:** 422 UNPROCESSABLE ENTRY <br />
+    **Content:** `{ error : "Email Invalid" }`
+
+* **Sample Call:**
+
+  <_Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) - this makes life easier and more predictable._> 
+
+* **Notes:**
+
+  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
