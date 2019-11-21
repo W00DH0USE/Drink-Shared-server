@@ -1,6 +1,6 @@
 **Drinkspiration Server**
 ----
-  <_Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple)._>
+  Drinkspiration is an App that allows people to look up and share drinks recipes. Each recipe will include a name, ingredients list and directions on how to make the recipe. Users will be able to create an account that will give them access to all of the drinks recipes, create and share their own drinks recipes and comment on other users recipes.
 
 * **URL**
 
@@ -8,67 +8,34 @@
 
 * **Method:**
   
-  `/api/students`
-  - GET -> Gets all students that belong to specific user id (Requires Auth)
-  - POST -> Inserts new student into database (Requires Auth)
+`/api/articles`
+  - GET -> Gets all articles (Requires Auth)
+  - POST -> Inserts new article into database (Requires Auth)
+  
+`/api/articles/:article_id`
+  - GET -> Gets an article that belong to the specified id (Requires Auth)
 
-`/api/students/:studentId`
-  - DELETE -> Removes student from database (Requires Auth)
-  - PATCH -> Updates student in database (Requires Auth)
-
+`/api/articles/:article_id/comments/`
+  - GET -> Gets all the comments that belong to a specific article id (Requires Auth)
+  
 `/api/auth/login`
   - POST -> Compares to users in database, if matching creates and sends JWT token
 
 `/api/auth/refresh`
   - POST -> Refreshes JWT token
 
+`/api/comments/`
+  - POST -> Inserts new comment into database (Requires Auth)
+  
 `/api/users`
   - POST -> Adds user to database
-  
-*  **URL Params**
-
-   <_If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required. Document data constraints._> 
-
-   **Required:**
- 
-   `id=[integer]`
-
-   **Optional:**
- 
-   `photo_id=[alphanumeric]`
-
-* **Data Params**
-
-  <_If making a post request, what should the body payload look like? URL Params rules apply here too._>
-
-* **Success Response:**
-  
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
-
-  * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
- 
-* **Error Response:**
-
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
-
-  OR
-
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
-
-* **Sample Call:**
-
-  <_Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) - this makes life easier and more predictable._> 
 
 * **Technologies Used:**
-- HTML
-- CSS
-- JavaScript
-- React
+- bcryptjs
+- cors
+- helmet
+- jsonwebtoken
+- morgan
 - Jest
 - Express
 - Node.js
@@ -76,10 +43,3 @@
 - Knex
 - Mocha, Chai & Supertest
 
-- Zeit Now
-- Heroku
-- Git
-- Github
-- Visual Studio Code
-- DBeaver
-- Postman
