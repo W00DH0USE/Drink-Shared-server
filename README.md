@@ -1,31 +1,45 @@
-# Blogful API Auth!
+**Drinkspiration Server**
+----
+  Drinkspiration is an App that allows people to look up and share drinks recipes. Each recipe will include a name, ingredients list and directions on how to make the recipe. Users will be able to create an account that will give them access to all of the drinks recipes, create and share their own drinks recipes and comment on other users recipes.
 
-## Scripts
+* **URL**
 
-Start the application `npm start`
+  GitHub Repo: [Drinkspiration Client](https://github.com/W00DH0USE/Drinkspiration)
 
-Start nodemon for the application `npm run dev`
+* **Method:**
+  
+`/api/articles`
+  - GET -> Gets all articles (Requires Auth)
+  - POST -> Inserts new article into database (Requires Auth)
+  
+`/api/articles/:article_id`
+  - GET -> Gets an article that belong to the specified id (Requires Auth)
 
-Run the tests in watch mode `npm test`
+`/api/articles/:article_id/comments/`
+  - GET -> Gets all the comments that belong to a specific article id (Requires Auth)
+  
+`/api/auth/login`
+  - POST -> Compares to users in database, if matching creates and sends JWT token
 
-Migrate the dev database `npm run migrate`
+`/api/auth/refresh`
+  - POST -> Refreshes JWT token
 
-Migrate the test database `npm run migrate:test`
+`/api/comments/`
+  - POST -> Inserts new comment into database (Requires Auth)
+  
+`/api/users`
+  - POST -> Adds user to database
 
-## Configuring Postgres
+* **Technologies Used:**
+- bcryptjs
+- cors
+- helmet
+- jsonwebtoken
+- morgan
+- Jest
+- Express
+- Node.js
+- PostgreSQL
+- Knex
+- Mocha, Chai & Supertest
 
-For tests involving time to run properly, configure your Postgres database to run in the UTC timezone.
-
-1. Locate the `postgresql.conf` file for your Postgres installation.
-   1. E.g. for an OS X, Homebrew install: `/usr/local/var/postgres/postgresql.conf`
-   2. E.g. on Windows, _maybe_: `C:\Program Files\PostgreSQL\11.2\data\postgresql.conf`
-2. Find the `timezone` line and set it to `UTC`:
-
-```conf
-# - Locale and Formatting -
-
-datestyle = 'iso, mdy'
-#intervalstyle = 'postgres'
-timezone = 'UTC'
-#timezone_abbreviations = 'Default'     # Select the set of available time zone
-```
