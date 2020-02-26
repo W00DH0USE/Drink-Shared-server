@@ -1,10 +1,10 @@
-**Drinkspiration Server**
+**Drink-Shared Server**
 ----
-  Drinkspiration is an App that allows people to look up and share drinks recipes. Each recipe will include a name, ingredients list and directions on how to make the recipe. Users will be able to create an account that will give them access to all of the drinks recipes, create and share their own drinks recipes and comment on other users recipes.
+  Drink-Shared is an App that allows people to look up and share drinks recipes. Each recipe will include a name, ingredients list and directions on how to make the recipe. Users will be able to create an account that will give them access to all of the drinks recipes, create and share their own drinks recipes and comment on other users recipes.
 
 * **URL**
 
-  GitHub Repo: [Drinkspiration Client](https://github.com/W00DH0USE/Drinkspiration)
+  GitHub Repo: [Drink-Shared Client](https://github.com/W00DH0USE/Drink-Shared)
 
 * **Method:**
   
